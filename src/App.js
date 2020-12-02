@@ -1,13 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import Login from './Login';
-import './App.css';
+import { useStateValue } from './StateProvider';
+import { SET_USER, SET_TOKEN, SET_PLAYLISTS } from './action';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
+
+import Login from './Login';
+import Player from './Player';
+
+import './App.css';
 
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [ token, setToken ] = useState(null);
+  const [ { user, token, playlists }, dispatch ] = useStateValue();
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -15,23 +20,33 @@ function App() {
     const _token = hash.access_token;
 
     if(_token){
-      setToken(_token);
+      dispatch(SET_TOKEN(_token));
 
       spotify.setAccessToken(_token);
 
       spotify.getMe().then(user => {
         console.log("USER", user);
-      }) 
+        dispatch(SET_USER(user));
+      });
+
+      spotify.getUserPlaylists().then((playlists) => {
+        dispatch(SET_PLAYLISTS(playlists));
+      });
+
     }
 
-    console.log("I HAVE A TOKEN", token);
-  }, []);
+    console.log("TOKEN", token);
+  }, [ token, dispatch ]);
+
+  console.log("I HAVE A TOKEN", token);
+  console.log("USER", user);
+  console.log("MY PLAYLIST", playlists);
 
   return (
     <div className="app">
       {
         token? (
-          <h1>I AM LOGGED IN</h1>
+          <Player spotify={spotify} />
         ) : (
           <Login />
         )

@@ -1,0 +1,70 @@
+.sidebar_text {
+    color: #B2B2B2;
+    font-size: 14px;
+    font-weight: 400;
+}
+.sidebar_text-white {
+    color: #ffffff;
+}
+.sidebar_text-small {
+    font-size: 12px;
+}
+.sidebar_text-xsmall {
+    font-size: 10px;
+}
+.sidebar_text-bold {
+    font-weight: 700;
+}
+.sidebar_text-spacing {
+    letter-spacing: 0.5px;
+}
+
+.sidebar {
+    background-color: rgb(0,0,0);
+    width: 230px;
+    min-width: 230px;
+    height: 85vh;
+}
+
+.sidebar__menu {
+    padding: 0 20px;
+}
+
+.sidebar__logo {
+    width: 150px;
+    padding: 12px 0px;
+}
+
+.sidebar__playlist {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar__playlist > span {
+    margin-bottom: 5px;
+}
+.lists {
+    margin-top: 10px !important;
+    overflow-y: scroll;
+    height: 140px;
+    padding-left: 20px;
+}
+.playlist__items {
+    margin: 2px 0;
+}
+
+.sidebar__menu > hr {
+    border: 1px solid #282828;
+    width: 100%;
+    margin: 10px auto;
+}
+
+::-webkit-scrollbar {
+    width: 13px;
+}
+/* ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgb(88,88,88); 
+} */
+::-webkit-scrollbar-thumb {
+    background: #585858; 
+}

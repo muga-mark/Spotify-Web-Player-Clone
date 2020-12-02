@@ -1,0 +1,30 @@
+.sidebarOption {
+    display: flex;
+    align-items: center;
+    color: #B2B2B2;
+    height: 40px;
+    cursor: pointer;
+    transition: 200ms color ease-in;
+}
+.sidebarOption__playlist {
+    height: 30px !important; 
+}
+
+.sidebarOption:hover {
+    color: #ffffff;
+}
+
+.sidebarOption__icon {
+    /* padding-left: 10px; */
+    margin-right: 15px;
+}
+.sidebarOption__icon_playlist {
+    color: black;
+    background-color: #B2B2B2;
+    padding: 2px;
+}
+
+.sidebarOption__icon_download {
+    margin-right: 2px !important;
+}
+
