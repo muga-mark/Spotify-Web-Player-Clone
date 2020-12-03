@@ -1,4 +1,21 @@
-.sidebarOption {
+.sidebar-option__text {
+  color: #B2B2B2;
+  font-size: 14px;
+  font-weight: 500;
+}
+.sidebar-option__text--white {
+  color: #ffffff;
+}
+
+.sidebar-option__text--small {
+  font-size: 12px;
+}
+
+.sidebar-option__text--bold {
+  font-weight: 700;
+}
+
+.sidebar-option {
     display: flex;
     align-items: center;
     color: #B2B2B2;
@@ -6,25 +23,24 @@
     cursor: pointer;
     transition: 200ms color ease-in;
 }
-.sidebarOption__playlist {
-    height: 30px !important; 
+.sidebar-option__playlist {
+    height: 25px; 
 }
 
-.sidebarOption:hover {
+.sidebar-option:hover, .sidebar-option__text:hover {
     color: #ffffff;
 }
 
-.sidebarOption__icon {
-    /* padding-left: 10px; */
+.sidebar-option__icon {
     margin-right: 15px;
 }
-.sidebarOption__icon_playlist {
+.sidebar-option__icon-playlist {
     color: black;
     background-color: #B2B2B2;
     padding: 2px;
 }
 
-.sidebarOption__icon_download {
+.sidebar-option__icon-install {
     margin-right: 2px !important;
 }
 

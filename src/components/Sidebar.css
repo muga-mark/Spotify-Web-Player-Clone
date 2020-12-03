@@ -3,20 +3,8 @@
     font-size: 14px;
     font-weight: 400;
 }
-.sidebar_text-white {
-    color: #ffffff;
-}
-.sidebar_text-small {
-    font-size: 12px;
-}
-.sidebar_text-xsmall {
-    font-size: 10px;
-}
-.sidebar_text-bold {
+.sidebar_text--bold {
     font-weight: 700;
-}
-.sidebar_text-spacing {
-    letter-spacing: 0.5px;
 }
 
 .sidebar {
@@ -43,13 +31,13 @@
 .sidebar__playlist > span {
     margin-bottom: 5px;
 }
-.lists {
+.sidebar__playlist-items {
     margin-top: 10px !important;
     overflow-y: scroll;
     height: 140px;
     padding-left: 20px;
 }
-.playlist__items {
+.sidebar__playlist-item {
     margin: 2px 0;
 }
 
@@ -68,3 +56,4 @@
 ::-webkit-scrollbar-thumb {
     background: #585858; 
 }
+

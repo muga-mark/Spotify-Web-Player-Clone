@@ -4,12 +4,12 @@ import Body from './components/Body';
 import Footer from './components/Footer';
 import './Player.css';
 
-function Player() {
+function Player({ spotify }) {
     return (
         <div>
             <div className="player__body">
                 <Sidebar />
-                <Body />
+                <Body spotify={spotify} />
             </div>
             <Footer />
         </div>

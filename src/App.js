@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import { useStateValue } from './StateProvider';
 import { SET_USER, SET_TOKEN, SET_PLAYLISTS } from './action';
 import { getTokenFromUrl } from './spotify';

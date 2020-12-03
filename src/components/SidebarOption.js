@@ -1,25 +1,24 @@
 import React from 'react';
-
 import './SidebarOption.css';
-import './Sidebar.css';
 
 function SidebarOption({ title, Icon, type }) {
 
     return (
-        <div className={`sidebarOption ${type==="playlist_item" && "sidebarOption__playlist"}`}>
+        <div className={`sidebar-option ${type==="playlist-item" && "sidebar-option__playlist"}`}>
+            
             {Icon && 
-                <Icon className={`sidebarOption__icon 
-                    ${type==="playlist" && "sidebarOption__icon_playlist"} 
-                    ${type==="playlist_item" && "sidebarOption__icon_download"}`} 
+                <Icon className={`sidebar-option__icon 
+                    ${type==="playlist-option" && "sidebar-option__icon-playlist"} 
+                    ${type==="install-app" && "sidebar-option__icon-install"}`} 
                 />
             }
             
             {Icon ? 
-                <span className="sidebar_text sidebar_text-bold">
+                <span className="sidebar-option__text sidebar-option__text--bold">
                     {title}
                 </span> 
             : 
-                <span className="sidebar_text">
+                <span className="sidebar-option__text">
                     {title}
                 </span> 
             }

@@ -23,60 +23,55 @@ function Footer() {
         <div className="footer">
             
             <div className="footer__left">
-                <div className="album_cover">
-                    {/* <img src="" alt="" /> */}
+                <div className="footer__album">
+                    {/* <img 
+                        className="footer__album"
+                        src={src} 
+                        alt="" 
+                    /> */}
                     image
                 </div>
-                <div className="song_info">
-                    <div className="song_info__left">
-                        <span className="song_info__title sidebar_text sidebar_text-white sidebar_text-spacing">
-                            Thru Your Phone Thru Your Phone Thru Thru Thru
-                        </span>
-                        <span className="sidebar_text sidebar_text-small">
-                            Cardi B
-                        </span>
-                    </div>
+                <div className="footer__info">
+                    <span className="footer__title footer__text footer__text--white footer__text--small-spacing">
+                        Thru Your Phone Thru Your Phone Thru Thru Thru
+                    </span>
+                    <span className="footer__text footer__text--small">
+                        Cardi B
+                    </span>
                 </div>
-                <div className="footer__left_icon">
-                    <span className="sidebar_text">
+
+                <div className="footer__left-icon">
+                    <span className="footer__text">
                         <FavoriteBorderIcon />
                     </span>
                 </div>
             </div>
+
+
             <div className="footer__center">
-                <div className="icons">
-                    <div className="footer__center_icon sidebar_text">
-                        <ShuffleIcon />
-                    </div>
-                    <div className="footer__center_icon sidebar_text">
-                        <SkipPreviousIcon />
-                    </div>
-                    <div className="footer__center_icon-center sidebar_text">
-                        <PlayCircleOutlineIcon />
-                    </div>
-                    <div className="footer__center_icon sidebar_text">
-                        <SkipNextIcon />
-                    </div>
-                    <div className="footer__center_icon sidebar_text">
-                        <RepeatIcon />
-                    </div>
+                <div className="footer__center-icon-container">
+                    <ShuffleIcon className="footer__icon footer__center-icon" />
+                    <SkipPreviousIcon className="footer__icon footer__center-icon" />
+                    <PlayCircleOutlineIcon className="footer__icon footer__center-icon" fontSize="large" />
+                    <SkipNextIcon className="footer__icon footer__center-icon" />
+                    <RepeatIcon className="footer__icon footer__center-icon" />
                 </div>
                 {/* <div className="slider">
                     <Slider />
                 </div> */}
             </div>
+
+
             <div className="footer__right">
-                
-                <div className="footer__right_icon sidebar_text">
+                <div className="footer__right-icon footer__text">
                     <QueueMusicIcon />
                 </div>
-                <div className="footer__right_icon sidebar_text">
+                <div className="footer__right-icon footer__text">
                     <DevicesIcon />
                 </div>
-                <div className="footer__right_icon sidebar_text">
+                <div className="footer__right-icon footer__text">
                     <VolumeDownIcon />
                 </div>
-                
             </div>
 
         </div>

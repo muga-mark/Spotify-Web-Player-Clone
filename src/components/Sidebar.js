@@ -23,31 +23,27 @@ function Sidebar() {
                     src={SpotifyLogoWhite} 
                     alt="spotify-logo" 
                 />
-
                 <Menu />
-
                 <div className="sidebar__playlist">
-                    <span className="sidebar_text sidebar_text-bold">
+                    <span className="sidebar_text sidebar_text--bold">
                         PLAYLISTS
                     </span>
-                    
-                    <SidebarOption Icon={AddIcon} title="Create Playlist" type="playlist" />
-                    <SidebarOption Icon={FavoriteIcon} title="Liked Songs" type="playlist" />
+                    <SidebarOption Icon={AddIcon} title="Create Playlist" type="playlist-option" />
+                    <SidebarOption Icon={FavoriteIcon} title="Liked Songs" type="playlist-option" />
                 </div>
-
                 <hr />
             </div>
 
-            <div className="sidebar__playlist lists">
+            <div className="sidebar__playlist sidebar__playlist-items">
                 {playlists?.items?.map((playlist) => (
-                    <div className="playlist__items">
-                        <SidebarOption title={playlist.name} type="playlist_item" />
+                    <div className="sidebar__playlist-item">
+                        <SidebarOption title={playlist.name} type="playlist-item" />
                     </div>
                 ))}                
             </div>
 
             <div className="sidebar__menu">
-                <SidebarOption Icon={GetAppIcon}  title="Install App" type="playlist_item" />
+                <SidebarOption Icon={GetAppIcon}  title="Install App" type="install-app" />
             </div>
 
         </div>

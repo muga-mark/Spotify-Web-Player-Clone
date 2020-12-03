@@ -1,3 +1,29 @@
+.footer__text {
+  color: #B2B2B2;
+  font-size: 14px;
+  font-weight: 400;
+}
+.footer__text--white {
+  color: #ffffff;
+}
+
+.footer__text--x-small {
+  font-size: 10px;
+}
+.footer__text--small {
+  font-size: 12px;
+}
+.footer__text--large {
+  font-size: 16px;
+}
+
+.footer__text--bold {
+  font-weight: 700;
+}
+.footer__text--small-spacing {
+  letter-spacing: 0.5px;
+}
+
 .footer {
     display: flex;
     width: 100%;
@@ -13,34 +39,34 @@
     padding: 20px;
 }
 
+.footer__icon {
+    color: #B2B2B2;
+}
+
 .footer__left {
     display: flex;
     max-width: 380px;   
 }
-    .album_cover {
+    .footer__album {
         width: 55px;
         height: 55px;
         background-color: white;
         margin-right: 15px;
     }
-    .song_info {
+    .footer__info {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
         height: 100%;
         margin: 10px 0;
     }
-    .song_info__left {
-        display: flex;
-        flex-direction: column;
-    }
-    .song_info__title {
+    .footer__title {
         max-width: 230px;
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
         transition: 0.5s;
     }
-    .footer__left_icon {
+    .footer__left-icon {
         margin: 10px 10px;
     }
 
@@ -50,18 +76,14 @@
     margin-right: 120px;
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
+    justify-content: space-between;
 }
-    .icons {
+    .footer__center-icon-container {
         display: flex;
         align-items: center;
-        /* vertical-align: center; */
     }
-    .footer__center_icon {
+    .footer__center-icon {
         margin: 0 15px;
-    }
-    .footer__center_icon-center > .MuiSvgIcon-root {
-        font-size: 40px;
     }
 
 
@@ -71,10 +93,7 @@
     color: white;
     width: 220px;
 }
-    .footer__icons {
-        display: flex;
-    }
-    .footer__right_icon {
+    .footer__right-icon {
         padding-left: 20px;
         
     }
@@ -82,14 +101,14 @@
 
 /* Extra small devices (phones, 600px and down) */
 @media screen and (max-width: 600px) {  
-    .song_info__title {
+    .footer__title {
         max-width: 80px !important;
     }
 }
 
 /* Extra small devices (phones, 900px and down) */
 @media screen and (max-width: 900px) {  
-    .song_info__title {
+    .footer__title {
         max-width: 150px;
     }
 }
