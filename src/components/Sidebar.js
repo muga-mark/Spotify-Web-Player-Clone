@@ -37,7 +37,11 @@ function Sidebar() {
             <div className="sidebar__playlist sidebar__playlist-items">
                 {playlists?.items?.map((playlist) => (
                     <div className="sidebar__playlist-item">
-                        <SidebarOption title={playlist.name} type="playlist-item" />
+                        <SidebarOption 
+                            type="playlist-item" 
+                            title={playlist.name} 
+                            id={playlist.id}
+                        />
                     </div>
                 ))}                
             </div>
