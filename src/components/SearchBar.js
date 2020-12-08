@@ -1,7 +1,7 @@
 import React from 'react';
 import SearchIcon from '@material-ui/icons/Search';
 
-function Search() {
+function SearchBar() {
     return (
         <div>
             <SearchIcon className="header__left-icon" />
@@ -10,4 +10,4 @@ function Search() {
     )
 }
 
-export default Search
+export default SearchBar

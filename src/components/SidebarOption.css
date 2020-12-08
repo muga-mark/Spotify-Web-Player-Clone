@@ -26,16 +26,12 @@
 .sidebar-option__playlist {
     height: 25px; 
 }
-.sidebar-option-link {
+.sidebar-link {
   text-decoration: none;
 }
 
-/* .sidebar-option:hover, .sidebar-option__text:hover {
+.sidebar-option:hover {
     color: #ffffff;
-} */
-
-#sidebar-option--highlight:hover {
-  color: white !important;
 }
 
 .sidebar-option__icon {

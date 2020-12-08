@@ -2,7 +2,9 @@ import React from 'react';
 import { useStateValue } from '../StateProvider';
 
 import MenuLists from './MenuLists';
-import SidebarOption from './SidebarOption';
+import SidebarOptionsInstall from './SidebarOptionsInstall';
+import SidebarPlaylistItems from './SidebarPlaylistItems';
+import SidebarOptionsPlaylist from './SidebarOptionsPlaylist';
 
 import AddIcon from '@material-ui/icons/Add';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -28,8 +30,18 @@ function Sidebar() {
                     <span className="sidebar_text sidebar_text--bold">
                         PLAYLISTS
                     </span>
-                    <SidebarOption Icon={AddIcon} title="Create Playlist" type="playlist-option" />
-                    <SidebarOption Icon={FavoriteIcon} title="Liked Songs" type="playlist-option" />
+                    <SidebarOptionsPlaylist 
+                        Icon={AddIcon} 
+                        title="Create Playlist" 
+                        type="playlist-option" 
+                        link="/"
+                    />
+                    <SidebarOptionsPlaylist 
+                        Icon={FavoriteIcon} 
+                        title="Liked Songs" 
+                        type="playlist-option" 
+                        link="/collection/tracks"
+                    />
                 </div>
                 <hr />
             </div>
@@ -37,17 +49,21 @@ function Sidebar() {
             <div className="sidebar__playlist sidebar__playlist-items">
                 {playlists?.items?.map((playlist) => (
                     <div key={playlist.id} className="sidebar__playlist-item">
-                        <SidebarOption 
+                        <SidebarPlaylistItems 
                             type="playlist-item" 
                             title={playlist.name} 
-                            id={playlist.id}
+                            link={`/playlist/${playlist.id}`}
                         />
                     </div>
                 ))}                
             </div>
 
             <div className="sidebar__menu">
-                <SidebarOption Icon={GetAppIcon}  title="Install App" type="install-app" />
+                <SidebarOptionsInstall 
+                    Icon={GetAppIcon}  
+                    title="Install App" 
+                    link="/download"
+                />
             </div>
 
         </div>

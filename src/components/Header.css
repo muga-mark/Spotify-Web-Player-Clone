@@ -2,6 +2,10 @@
     display: flex;
     justify-content: space-between;
     padding: 15px 20px;
+    background-color: transparent;
+    position: absolute;
+    /* top: 0; */
+    width: 80%;
 }
 
 /* .header__left {
@@ -18,6 +22,8 @@
     border-radius: 20px;
     background-color: #000000;
     transition: 200ms color ease-in;
+    position: relative;
+    left: 0;
 }
 
 .header__icon--rotate {
@@ -38,6 +44,8 @@
     border-radius: 30px;
     padding: 3px 1px;
     background-color: #000000;
+    position: relative;
+    /* right: ;: 0; */
 }
 .header__right:hover {
     background-color: #282828;

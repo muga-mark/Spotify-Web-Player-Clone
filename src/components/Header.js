@@ -9,7 +9,7 @@ import './Header.css'
 
 function Header() {
     const [ { user }, dispatch ] = useStateValue();
-
+    console.log("USER>", user);
     return (
         <div className="header">
             <div className="header__left">

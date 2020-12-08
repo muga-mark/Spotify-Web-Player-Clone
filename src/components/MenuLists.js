@@ -1,5 +1,5 @@
 import React from 'react';
-import SidebarOption from './SidebarOption';
+import SidebarOptionsMenu from './SidebarOptionsMenu';
 
 import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
@@ -8,9 +8,21 @@ import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 function MenuLists() {
     return (
         <>
-            <SidebarOption Icon={HomeOutlinedIcon} title="Home" />
-            <SidebarOption Icon={SearchOutlinedIcon} title="Search" />
-            <SidebarOption Icon={LibraryMusicIcon} title="Your Library" />
+            <SidebarOptionsMenu 
+                Icon={HomeOutlinedIcon} 
+                title="Home" 
+                link="/"
+            />
+            <SidebarOptionsMenu 
+                Icon={SearchOutlinedIcon} 
+                title="Search" 
+                link="/search"
+            />
+            <SidebarOptionsMenu 
+                Icon={LibraryMusicIcon} 
+                title="Your Library" 
+                link="/collection/playlists"
+            />
         </>
     )
 };

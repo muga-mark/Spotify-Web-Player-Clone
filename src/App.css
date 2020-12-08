@@ -1,3 +1,17 @@
 * {
   margin: 0;
 }
+
+.app-player {
+  display: flex;
+}
+.wrapper {
+    background-color: #121212;
+    height: 85vh;
+    width: 100%;
+    overflow-y: overlay;
+
+    /* height: 100vh;
+    flex: 0.8; */
+
+}
