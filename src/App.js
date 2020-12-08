@@ -12,6 +12,24 @@ import SpotifyWebApi from 'spotify-web-api-js';
 
 import Login from './Login';
 import Player from './Player';
+import Playlist from './components/Playlist';
+import Profile from './components/Profile';
+
+
+import Home from './components/MenuHome'
+import Search from './components/MenuSearch';
+import Library from './components/MenuLibrary';
+import Albums from './components/MenuLibraryAlbums';
+import Artists from './components/MenuLibraryArtists';
+import Playlists from './components/MenuLibraryPlaylists';
+import Podcasts from './components/MenuLibraryPodcasts';
+import LikedSongs from './components/PlaylistLikedSongs';
+import CreatePlaylist from './components/PlaylistCreate';
+import Install from './components/SidebarInstall';
+
+
+
+
 
 import './App.css';
 
@@ -32,6 +50,7 @@ function App() {
 
       spotify.getMe().then(user => {
         dispatch(SET_USER(user));
+        console.log("USER >>>", user);
       });
 
       spotify.getUserPlaylists().then((playlists) => {
@@ -54,9 +73,14 @@ function App() {
               {/* <Route exact path="/login">
                 <Login />
               </Route> */}
+
+              <Route exact path="/home">
+                <Home />
+              </Route>
               <Route exact path="/search">
                 <Search />
               </Route>
+              
               <Route exact path="/collection/playlists">
                 <Playlists />
               </Route>
@@ -70,7 +94,7 @@ function App() {
                 <Albums />
               </Route>
               <Route exact path="/collection/tracks">
-                <Tracks />
+                <LikedSongs />
               </Route>
             </Switch>
           </Router>

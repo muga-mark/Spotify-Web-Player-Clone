@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStateValue } from '../StateProvider';
 
-import Menu from './Menu';
+import MenuLists from './MenuLists';
 import SidebarOption from './SidebarOption';
 
 import AddIcon from '@material-ui/icons/Add';
@@ -23,7 +23,7 @@ function Sidebar() {
                     src={SpotifyLogoWhite} 
                     alt="spotify-logo" 
                 />
-                <Menu />
+                <MenuLists />
                 <div className="sidebar__playlist">
                     <span className="sidebar_text sidebar_text--bold">
                         PLAYLISTS
@@ -36,7 +36,7 @@ function Sidebar() {
 
             <div className="sidebar__playlist sidebar__playlist-items">
                 {playlists?.items?.map((playlist) => (
-                    <div className="sidebar__playlist-item">
+                    <div key={playlist.id} className="sidebar__playlist-item">
                         <SidebarOption 
                             type="playlist-item" 
                             title={playlist.name} 

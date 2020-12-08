@@ -5,7 +5,7 @@ import HomeOutlinedIcon from '@material-ui/icons/HomeOutlined';
 import SearchOutlinedIcon from '@material-ui/icons/SearchOutlined';
 import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
 
-function Menu() {
+function MenuLists() {
     return (
         <>
             <SidebarOption Icon={HomeOutlinedIcon} title="Home" />
@@ -15,4 +15,4 @@ function Menu() {
     )
 };
 
-export default Menu
+export default MenuLists
