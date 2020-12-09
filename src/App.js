@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link
+  useParams
 } from "react-router-dom";
 import { useStateValue } from './StateProvider';
 import { SET_USER, SET_TOKEN, SET_PLAYLISTS } from './actions';
@@ -41,7 +41,10 @@ import './App.css';
 const spotify = new SpotifyWebApi();
 
 function App() {
-  const [ { user, token, playlists }, dispatch ] = useStateValue();
+  // const { playlistId } = useParams();
+  const [ { user, token, playlists, playlistId }, dispatch ] = useStateValue();
+  // const [ loading, setLoading] = useState(true);
+  // const [ playlist, setPlaylist ] = useState([]);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
@@ -62,9 +65,26 @@ function App() {
         dispatch(SET_PLAYLISTS(playlists));
       });
 
+      
+        // if(playlist){
+        //     if( playlist.images.length>0 && playlist.name && playlist.description && playlist.owner && playlist.tracks){
+        //         setLoading(false)
+        //     }
+        // }
     }
 
-  }, [ token, dispatch, ]);
+    // if(playlistId){
+    //   spotify.getPlaylist(playlistId).then((result) =>
+    //       setPlaylist(result),
+    //       // setLoading(false/)
+    //   );
+
+    // }
+
+  }, [ token, dispatch, playlistId ]);
+
+  // console.log(loading);
+  // console.log(playlistId);
 
   return (
     <div className="app">
@@ -128,7 +148,11 @@ function App() {
                 <Route exact path="/playlist/:playlistId">
                   <div className="wrapper">
                     <Header spotify={spotify} />
-                    <Playlist spotify={spotify} />
+                    <Playlist 
+                      spotify={spotify} 
+                      // loading={loading} 
+                      // playlist={playlist}
+                    />
                   </div>
                 </Route>
 

@@ -32,3 +32,10 @@ export function SET_ITEM(result){
         item: result,
     };
 }
+
+export function SET_PLAYLIST_ID(result){
+    return{
+        type: "SET_PLAYLIST_ID",
+        playlistId: result,
+    }
+}

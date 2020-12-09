@@ -6,8 +6,8 @@ function SidebarPlaylistItems({ title, type, link }) {
 
     return (
         <Link to={link} className="sidebar-link">
-            <div id="sidebar-option--highlight" className={`sidebar-option sidebar-option--highlight ${type==="playlist-item" && "sidebar-option__playlist"}`}>
-                <span className="sidebar-option__text">
+            <div className={`sidebar-option sidebar-option--highlight ${type==="playlist-item" && "sidebar-option__playlist"}`}>
+                <span className="sidebar-option__text sidebar-option__text-playlist">
                     {title} 
                 </span>
             </div>
