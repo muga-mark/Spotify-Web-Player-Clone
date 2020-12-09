@@ -39,3 +39,10 @@ export function SET_PLAYLIST_ID(result){
         playlistId: result,
     }
 }
+
+export function SET_CURRENT_PLAYLIST(result){
+    return{
+        type: "SET_CURRENT_PLAYLIST",
+        currentPlaylist: result,
+    }
+}

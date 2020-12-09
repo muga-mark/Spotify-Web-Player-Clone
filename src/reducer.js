@@ -5,8 +5,9 @@ export const initialState = {
     playing: false,
     item: null,
     playlistId: "",
+    currentPlaylist: [],
     // token: "BQA_4IBZ0-zRm-myBzYQ0VJt5tEWX2v19a2J-RkhS6mZjcTRgvsI3mGECqjiuKSLjB5tuD99B2hO4jBUMaGpBS4CfjhyCyY43d0jM6KJO1G3o1oRz_EG4eAELiKRkH7qWr-ImuU2o7vsw2o",
-    // token: "BQB_12IMvLz7SuB8Pgp_zpWrH61lHQzq0MHUeoQaR8HkPLkW8TO19ix_2gpdKdt96muolF5jacuCDON9eB-4LUsEwFa5pAL85KHCaMMQkzehDqVFetesOAQ9CX3N9ltRgPAaGM1J7dcO45fyHLEKOXUNDeQoKf79CZng-CJC9VH1kw" 
+    // token: "BQCPwjUcQ1YESte_4wWLdwbCw8wcPVOvokYA8iAefMcQv9Z6_eKz5XLqZSX1mOn0hQDq2yfih1PHJtxc-CYc1Yw47m6OGduA8vhTANQQJaFpRS2pHSndR0vvmtB6_XMdY6OHe7rivWiSBfqZ6CU1v1N0HZzsOK35YWJOMsvpIau8kA", 
 }
 
 export const actionTypes = {
@@ -16,6 +17,7 @@ export const actionTypes = {
     SET_PLAYING: "SET_PLAYING",
     SET_ITEM: "SET_ITEM",
     SET_PLAYLIST_ID: "SET_PLAYLIST_ID",
+    SET_CURRENT_PLAYLIST: "SET_CURRENT_PLAYLIST",
 }
 
 const reducer = (state, action) => {
@@ -56,6 +58,12 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 playlistId: action.playlistId,
+            }
+
+        case actionTypes.SET_CURRENT_PLAYLIST:
+            return {
+                ...state,
+                currentPlaylist: action.currentPlaylist,
             }
 
         default:

@@ -1,10 +1,28 @@
-import React from 'react'
+import React, { useEffect } from 'react';
+// const ColorThief = require('colorthief');
+// import ColorThief from 'colorthief';
 
-function PlaylistBanner({playlist}) {
+
+function PlaylistBanner({ playlist, loading }) {
+    
+    // useEffect(() => {
+    //     if(loading===false){
+    //         if(playlist.images[0].url){
+    //             const ColorThief = require('colorthief');
+    //             const img = playlist.images[0].url;
+    
+    //             ColorThief.getColor(img)
+    //             .then(color => { console.log("color", color) })
+    //             .catch(err => { console.log(err) })
+    //         }
+    //     }
+    // }, [loading]);
+        
     return (
         <div className="playlist__banner">
             {playlist.images[0]?.url?
                 <img 
+                    id="image"
                     className="playlist__image"
                     src={playlist.images[0].url} 
                     alt={playlist.name} 

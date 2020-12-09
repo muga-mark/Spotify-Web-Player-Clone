@@ -6,7 +6,7 @@ import {
   useParams
 } from "react-router-dom";
 import { useStateValue } from './StateProvider';
-import { SET_USER, SET_TOKEN, SET_PLAYLISTS } from './actions';
+import { SET_USER, SET_TOKEN, SET_PLAYLISTS, SET_CURRENT_PLAYLIST } from './actions';
 import { getTokenFromUrl } from './spotify';
 import SpotifyWebApi from 'spotify-web-api-js';
 
@@ -31,10 +31,6 @@ import LikedSongs from './components/PlaylistLikedSongs';
 import CreatePlaylist from './components/PlaylistCreate';
 import Install from './components/SidebarInstall';
 
-
-
-
-
 import './App.css';
 
 
@@ -42,7 +38,7 @@ const spotify = new SpotifyWebApi();
 
 function App() {
   // const { playlistId } = useParams();
-  const [ { user, token, playlists, playlistId }, dispatch ] = useStateValue();
+  const [ { user, token, playlists, playlistId, currentPlaylist }, dispatch ] = useStateValue();
   // const [ loading, setLoading] = useState(true);
   // const [ playlist, setPlaylist ] = useState([]);
 
@@ -58,33 +54,23 @@ function App() {
 
       spotify.getMe().then(user => {
         dispatch(SET_USER(user));
-        console.log("USER >>>", user);
+        // console.log("USER >>>", user);
       });
 
       spotify.getUserPlaylists().then((playlists) => {
         dispatch(SET_PLAYLISTS(playlists));
       });
 
-      
-        // if(playlist){
-        //     if( playlist.images.length>0 && playlist.name && playlist.description && playlist.owner && playlist.tracks){
-        //         setLoading(false)
-        //     }
-        // }
     }
 
-    // if(playlistId){
-    //   spotify.getPlaylist(playlistId).then((result) =>
-    //       setPlaylist(result),
-    //       // setLoading(false/)
-    //   );
-
-    // }
+    if(window.location.pathname === "search"){
+        dispatch(SET_CURRENT_PLAYLIST([]))
+        console.log("PLAYLIST CHANGED");
+    }
 
   }, [ token, dispatch, playlistId ]);
 
-  // console.log(loading);
-  // console.log(playlistId);
+  console.log("window.location.home", window.location.pathname);
 
   return (
     <div className="app">
