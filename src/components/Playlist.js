@@ -55,7 +55,7 @@ function Playlist({ spotify }) {
                     <PlaylistTracksHeader />
                     <hr />
                     {/* <PlaylistTrack  /> */}
-                    {currentPlaylist.tracks.items.map((result) => (
+                    {currentPlaylist.tracks?.items.map((result) => (
                         <PlaylistTrack track={result.track} date_added={result.added_at} />
                     ))}
                 </>
