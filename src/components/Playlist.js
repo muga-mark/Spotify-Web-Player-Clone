@@ -5,6 +5,7 @@ import { SET_PLAYLIST_ID, SET_CURRENT_PLAYLIST } from '../actions';
 
 import SpinnerCustom from './SpinnerCustom';
 import PlaylistBanner from './PlaylistBanner';
+import PlaylistTracksHeaderButtons from './PlaylistTracksHeaderButtons';
 import PlaylistTracksHeader from './PlaylistTracksHeader';
 import PlaylistTrack from './PlaylistTrack';
 
@@ -52,12 +53,15 @@ function Playlist({ spotify }) {
             :
                 <>
                     <PlaylistBanner playlist={currentPlaylist} loading={loading} />
-                    <PlaylistTracksHeader />
-                    <hr />
-                    {/* <PlaylistTrack  /> */}
-                    {currentPlaylist.tracks?.items.map((result) => (
-                        <PlaylistTrack track={result.track} date_added={result.added_at} />
-                    ))}
+                    <div className="playlist__body">
+                        <PlaylistTracksHeaderButtons />
+                        <PlaylistTracksHeader />
+                        <hr />
+                        {/* <PlaylistTrack  /> */}
+                        {currentPlaylist.tracks?.items.map((result) => (
+                            <PlaylistTrack track={result.track} date_added={result.added_at} />
+                        ))}
+                    </div>
                 </>
             }
         </div>

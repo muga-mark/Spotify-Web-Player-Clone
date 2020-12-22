@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 // const ColorThief = require('colorthief');
 // import ColorThief from 'colorthief';
 
+import './PlaylistBanner.css';
+
 
 function PlaylistBanner({ playlist, loading }) {
     

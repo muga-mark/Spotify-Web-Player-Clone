@@ -50,7 +50,7 @@ function PlaylistTrack({ track, date_added }) {
                         <span className="playlist-track-text playlist-track-text--bold  playlist-track-text--white">
                             {track.name}
                         </span>
-                        <span className="playlist-track-text">
+                        <span className="playlist-track-text" id="track">
                             {track.artists[0]?.name}
                         </span>
                     </div>

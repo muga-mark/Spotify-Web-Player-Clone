@@ -1,11 +1,15 @@
 .playlist-track {
     display: flex;
-    width: 100%;
+    /* width: 100%; */
     padding: 10px 20px;
+    /* margin-right: 30px; */
 }
-
 .playlist-track:hover {
     background-color: #ffffff18;
+    color: #ffffff !important;
+}
+.playlist-track:hover .playlist-track-text{
+    color: #ffffff !important;
 }
 
 .playlist-track-text {
@@ -54,6 +58,8 @@
 .playlist-track-album {
     width: 100%;
     max-width: 280px;
+    /* padding-right: 10px !important; */
+    /* padding: 10px; */
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
