@@ -1,51 +1,54 @@
 .sidebar_text {
-    color: #B2B2B2;
-    font-size: 14px;
-    font-weight: 400;
+  color: #b2b2b2;
+  font-size: 14px;
+  font-weight: 400;
 }
 .sidebar_text--bold {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .sidebar {
-    background-color: rgb(0,0,0);
-    width: 230px;
-    min-width: 230px;
-    height: 85vh;
+  background-color: rgb(0, 0, 0);
+  width: 230px;
+  min-width: 230px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .sidebar__menu {
-    padding: 0 20px;
+  padding: 0 20px;
 }
 
 .sidebar__logo {
-    width: 150px;
-    padding: 12px 0px;
+  width: 150px;
+  padding: 12px 0px;
 }
 
 .sidebar__playlist {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
 }
 .sidebar__playlist > span {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
+}
+.sidebar__playlist-item-container {
+  /* margin-top: 10px !important; */
+  flex-grow: 1;
+  overflow-y: scroll;
 }
 .sidebar__playlist-items {
-    margin-top: 10px !important;
-    overflow-y: scroll;
-    height: 140px;
-    padding-left: 20px;
+  /* height: 100%; */
+  padding-left: 20px;
+  padding-right: 20px;
 }
 .sidebar__playlist-item {
-    margin: 2px 0;
+  margin: 2px 0;
 }
 
 .sidebar__menu > hr {
-    border: 1px solid #282828;
-    width: 100%;
-    margin: 10px auto;
+  border: 1px solid #282828;
+  width: 100%;
+  margin: 10px auto;
 }
-
-
-

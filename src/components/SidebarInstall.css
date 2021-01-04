@@ -1,14 +1,25 @@
 .sidebar-install {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;   
-    overflow-y: scroll;
-    padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  padding: 50px 20px;
+  flex-grow: 1;
+  height: 100%;
+}
+
+/* .sidebar-install__content {
+  margin: auto 0;
+} */
+
+.sidebar-install__image {
+  height: 350px;
+  width: 550px;
 }
 
 .sidebar-install-text {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 /* .sidebar-install-text--bold {
@@ -16,13 +27,13 @@
 } */
 
 .title {
-    font-size: 26px;
-    font-weight: 700;
-    margin-bottom: 20px;
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
 }
 
 .sub-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
 }

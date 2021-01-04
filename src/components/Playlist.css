@@ -1,66 +1,93 @@
 .playlist {
-    display: flex;
-    flex-direction: column;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    /* padding: 100px 40px 20px; */
-    /* width: 100%; */
-    /* padding-bottom: 20px; */
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  /* padding: 100px 40px 20px; */
+  /* width: 100%; */
+  /* padding-bottom: 20px; */
+  flex-grow: 1;
+  height: 100%;
 }
 
 .playlist__body {
-    padding: 20px 40px 20px 40px;
+  padding: 20px 0 20px 0;
+}
+
+.playlist__separator {
+  padding: 0 40px 0 40px;
+}
+
+.playlist__tracks {
+  counter-reset: css-counter 0;
+  padding: 10px 40px 10px 40px;
 }
 
 .playlist__loading {
-    height: 80%;
+  height: 100%;
 }
 
 .playlist-text {
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: 500;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .playlist-text--uppercase {
-    text-transform: uppercase;
+  text-transform: uppercase;
 }
 
 .playlist-text--title {
-    font-size: 60px;
-    font-weight: 800;
+  /* font-size: 90px; */
+  font-size: calc(3vw + 3vh);
+  font-weight: 800;
 }
 
 .playlist-text--margin-right {
-    margin-right: 5px;
+  margin-right: 5px;
 }
 
 .playlist-text--bold {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 .playlist-text--gray {
-    color: #CEDDDA;
+  color: #ceddda;
 }
 
 .playlist__banner {
-    display: flex;
+  display: flex;
 }
 
 .playlist__info {
-    display: flex;
-    flex-direction: column;
-    margin-left: 20px;
-    align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+  align-self: flex-end;
 }
 
 .playlist__sub-info {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
+.playlist__separator > hr {
+  border: 1px solid #585858 !important;
+  width: 100%;
+  margin: 5px auto;
+}
 
-.playlist__body > hr {
-    border: 1px solid #282828 !important; 
-    width: 100%;
-    margin: 5px auto;
+@media screen and (max-width: 1488px) {
+  .playlist-text--title {
+    font-size: calc(2vw + 2vh);
+  }
+}
+
+@media screen and (max-width: 1022px) {
+  .playlist__tracks {
+    counter-reset: css-counter 0;
+    padding: 10px 20px 10px 20px;
+  }
+  .playlist__separator {
+    padding: 0 20px 0 20px;
+  }
 }

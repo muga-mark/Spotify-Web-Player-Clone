@@ -1,58 +1,64 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
+  useParams,
 } from "react-router-dom";
-import { useStateValue } from './StateProvider';
-import { SET_USER, SET_TOKEN, SET_PLAYLISTS, SET_CURRENT_PLAYLIST } from './actions';
-import { getTokenFromUrl } from './spotify';
-import SpotifyWebApi from 'spotify-web-api-js';
+import { useStateValue } from "./StateProvider";
+import {
+  SET_USER,
+  SET_TOKEN,
+  SET_PLAYLISTS,
+  SET_CURRENT_PLAYLIST,
+} from "./actions";
+import { getTokenFromUrl } from "./spotify";
+import SpotifyWebApi from "spotify-web-api-js";
 
-import Header from './components/Header';
-import Sidebar from './components/Sidebar';
-import Footer from './components/Footer';
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
+import Footer from "./components/Footer";
 
-import Login from './Login';
+import Login from "./Login";
 // import Player from './Player';
-import Playlist from './components/Playlist';
-import Profile from './components/Profile';
+import Playlist from "./components/Playlist";
+import Profile from "./components/Profile";
 
+import Home from "./components/MenuHome";
+import Search from "./components/MenuSearch";
+import Playlists from "./components/MenuLibraryPlaylists";
+import Podcasts from "./components/MenuLibraryPodcasts";
+import Artists from "./components/MenuLibraryArtists";
+import Albums from "./components/MenuLibraryAlbums";
 
-import Home from './components/MenuHome'
-import Search from './components/MenuSearch';
-import Playlists from './components/MenuLibraryPlaylists';
-import Podcasts from './components/MenuLibraryPodcasts';
-import Artists from './components/MenuLibraryArtists';
-import Albums from './components/MenuLibraryAlbums';
+import LikedSongs from "./components/PlaylistLikedSongs";
+import CreatePlaylist from "./components/PlaylistCreate";
+import Install from "./components/SidebarInstall";
 
-import LikedSongs from './components/PlaylistLikedSongs';
-import CreatePlaylist from './components/PlaylistCreate';
-import Install from './components/SidebarInstall';
-
-import './App.css';
-
+import "./App.css";
 
 const spotify = new SpotifyWebApi();
 
 function App() {
   // const { playlistId } = useParams();
-  const [ { user, token, playlists, playlistId, currentPlaylist }, dispatch ] = useStateValue();
+  const [
+    { user, token, playlists, playlistId, currentPlaylist },
+    dispatch,
+  ] = useStateValue();
   // const [ loading, setLoading] = useState(true);
   // const [ playlist, setPlaylist ] = useState([]);
 
   useEffect(() => {
     const hash = getTokenFromUrl();
-    window.location.hash = ""
+    window.location.hash = "";
     const _token = hash.access_token;
 
-    if(_token){
+    if (_token) {
       dispatch(SET_TOKEN(_token));
 
       spotify.setAccessToken(_token);
 
-      spotify.getMe().then(user => {
+      spotify.getMe().then((user) => {
         dispatch(SET_USER(user));
         // console.log("USER >>>", user);
       });
@@ -60,104 +66,98 @@ function App() {
       spotify.getUserPlaylists().then((playlists) => {
         dispatch(SET_PLAYLISTS(playlists));
       });
-
     }
 
-    if(window.location.pathname === "search"){
-        dispatch(SET_CURRENT_PLAYLIST([]))
-        console.log("PLAYLIST CHANGED");
+    if (window.location.pathname === "search") {
+      dispatch(SET_CURRENT_PLAYLIST([]));
+      // console.log("PLAYLIST CHANGED");
     }
+  }, [token, dispatch, playlistId]);
 
-  }, [ token, dispatch, playlistId ]);
-
-  console.log("window.location.home", window.location.pathname);
+  // console.log("window.location.home", window.location.pathname);
 
   return (
     <div className="app">
-      {
-        token? (
-          <Router>            
-            <div className="app-player">
-              <Sidebar />
-              <Switch>
-                {/* <Route exact path="/">
+      {token ? (
+        <Router>
+          <div className="app-player">
+            <Sidebar />
+            <Switch>
+              {/* <Route exact path="/">
                   <Player spotify={spotify} />
                 </Route> */}
-                {/* <Route exact path="/login">
+              {/* <Route exact path="/login">
                   <Login />
                 </Route> */}
 
-                <Route exact path="/">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Home />
-                  </div>
-                </Route>
-                <Route exact path="/search">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Search />
-                  </div>
-                </Route>
+              <Route exact path="/">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Home />
+                </div>
+              </Route>
+              <Route exact path="/search">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Search />
+                </div>
+              </Route>
 
-                <Route exact path="/collection/playlists">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Playlists />
-                  </div>
-                </Route>
-                <Route exact path="/collection/podcasts">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Podcasts />
-                  </div>
-                </Route>
-                <Route exact path="/collection/artists">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Artists />
-                  </div>
-                </Route>
-                <Route exact path="/collection/albums">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Albums />
-                  </div>
-                </Route>
-                <Route exact path="/collection/tracks">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <LikedSongs />
-                  </div>
-                </Route>
+              <Route exact path="/collection/playlists">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Playlists />
+                </div>
+              </Route>
+              <Route exact path="/collection/podcasts">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Podcasts />
+                </div>
+              </Route>
+              <Route exact path="/collection/artists">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Artists />
+                </div>
+              </Route>
+              <Route exact path="/collection/albums">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Albums />
+                </div>
+              </Route>
+              <Route exact path="/collection/tracks">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <LikedSongs />
+                </div>
+              </Route>
 
-                <Route exact path="/playlist/:playlistId">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Playlist 
-                      spotify={spotify} 
-                      // loading={loading} 
-                      // playlist={playlist}
-                    />
-                  </div>
-                </Route>
+              <Route exact path="/playlist/:playlistId">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Playlist
+                    spotify={spotify}
+                    // loading={loading}
+                    // playlist={playlist}
+                  />
+                </div>
+              </Route>
 
-                <Route exact path="/download">
-                  <div className="wrapper">
-                    <Header spotify={spotify} />
-                    <Install />
-                  </div>
-                </Route>
-
-              </Switch>
-            </div>
-            <Footer />
-          </Router>
-        ) : (
-          <Login />
-        )
-      }
-      
+              <Route exact path="/download">
+                <div className="wrapper">
+                  <Header spotify={spotify} />
+                  <Install />
+                </div>
+              </Route>
+            </Switch>
+          </div>
+          <Footer />
+        </Router>
+      ) : (
+        <Login />
+      )}
     </div>
   );
 }

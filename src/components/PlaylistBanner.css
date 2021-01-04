@@ -1,10 +1,28 @@
 .playlist__banner {
-    background-color: #84d1c3c0;
-    padding: 100px 40px 20px 40px;
-    box-shadow: 5px 100px 150px #84d1c34f, -5px -5px 30px #84d1c34f;
+  background-color: #84d1c3c0;
+  padding: 100px 40px 20px 40px;
+  box-shadow: 5px 100px 150px #84d1c34f, -5px -5px 30px #84d1c34f;
 }
 
 .playlist__image {
-    width: 230px;
-    box-shadow: 5px 5px 50px #4e4e4e59, -5px -5px 50px #4e4e4e59;
+  width: 230px;
+  height: 230px;
+  box-shadow: 5px 5px 50px #4e4e4e59, -5px -5px 50px #4e4e4e59;
+}
+
+.playlist__title {
+  word-spacing: -15px;
+}
+
+@media screen and (max-width: 1488px) {
+  .playlist__title {
+    word-spacing: -5px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .playlist__image {
+    width: 180px !important;
+    height: 180px !important;
+  }
 }
